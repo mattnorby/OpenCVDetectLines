@@ -77,7 +77,8 @@ int main(int argc, char *argv[]) {
 
     // Calculate the intersection point of all those lines, using least squares.
     // To use the OpenCV solve routine, we need to make an n x 2 matrix A and
-    // a 2 x 1 vector b such that Av = b, where v = the 2 x 1 answer [x y].
+    // an n x 1 vector b such that Av = b, where v = the 2 x 1 best answer [x y]
+    // and n is the number of lines.
     cv::Mat A(lines.size(), 2, CV_32FC1);
     cv::Mat b(lines.size(), 1, CV_32FC1);
     int n = 0;
